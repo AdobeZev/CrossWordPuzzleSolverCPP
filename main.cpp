@@ -22,14 +22,41 @@ int WordPuzzle::getColumns()
 	return columnAmount;
 }
 
+void WordPuzzle::setRows(int amount)
+{
+	rowAmount = amount;
+}
+
 int WordPuzzle::getRows()
 {
 	return rowAmount;
 }
 
+// Row Vect Info
+
+// Row Vect Info Functions
+
+std::vector<std::string> WordPuzzle::RowVectInfo::getLetters()
+{
+	return letters;
+};
+
+// Row Vect Info Declartion
+
+WordPuzzle::RowVectInfo::RowVectInfo(int RowAmount, int ColumnAmount)
+{
+
+	// Set Letters length
+
+	letters.reserve(ColumnAmount);
+
+}
+
 WordPuzzle::WordPuzzle()
 {
 	// Setup
+
+	RowsTable.reserve(rowAmount);
 }
 
 int main() {
