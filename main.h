@@ -1,7 +1,24 @@
 #include <iostream>
-#include <string>
-#include <algorithm>
 #include <vector>
+#include <string>
+#include <cstring>
+
+class conversions
+{
+
+	public:
+
+	bool checkIfStringIsInt(const std::string stringToCheck);
+
+	bool convertStringToInt(std::string stringToConvert, int* intToChange);
+	int convertStringToInt(std::string stringToConvert);
+
+	std::string removeWhiteSpace(std::string stringToRemove);
+	void removeWhiteSpace(std::string* stringToRemove);
+
+	conversions();
+
+};
 
 class WordPuzzle
 {
@@ -30,20 +47,32 @@ class WordPuzzle
 
 	protected:
 
-	int rowAmount, columnAmount;
+	static int Rows;
+	static int Columns;
+	static int WordsAmount;
 
-	std::vector<RowVectInfo*> RowsTable;
+	// Vector setup || Rows < Columns >
+	static std::vector<std::vector<char>> wordPuzzleArray;
 
 	private:
 
 	public:
 
+	public:
+
 	int getRows();
 	int getColumns();
+	int getWordsAmount();
 
-	void setRows(int amount);
-	void setColumns(int amount);	
+	bool setRows(const int numberToSet);
+	bool setColumns(const int numberToSet);
+	bool setWordsAmount(const int numberToSet);
+
+	bool setupRows();
+	bool setupColumns(); 
+	bool setupWords();
 
 	WordPuzzle();
 
 };
+
